@@ -11,8 +11,6 @@ class LoginRequiredPermissionMixin(LoginRequiredMixin):
 class RedirectAuthenticatedUserMixin(AccessMixin):
     """Міксин для перенаправлення залогінених користувачів."""
     def dispatch(self, request, *args, **kwargs):
-        # Перевіряємо, чи користувач автентифікований
         if request.user.is_authenticated:
-            return redirect('profile')  # Замініть 'profile' на ім'я URL профілю
-        # Якщо користувач не автентифікований, виконуємо стандартний dispatch
+            return redirect('profile')
         return super().dispatch(request, *args, **kwargs)

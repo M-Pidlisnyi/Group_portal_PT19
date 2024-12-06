@@ -8,7 +8,7 @@ from .models import CustomUser
 from .mixins import LoginRequiredPermissionMixin, RedirectAuthenticatedUserMixin
 
 
-class UserRegisterView(View, RedirectAuthenticatedUserMixin):
+class UserRegisterView(RedirectAuthenticatedUserMixin, View):
     
     def get(self, request):
         form = UserRegistrationForm()
@@ -22,7 +22,7 @@ class UserRegisterView(View, RedirectAuthenticatedUserMixin):
             return redirect('profile')
         return render(request, 'accounts_app/register.html', {'form': form})
 
-class UserLoginView(LoginView,RedirectAuthenticatedUserMixin):
+class UserLoginView(RedirectAuthenticatedUserMixin, LoginView):
     template_name = 'accounts_app/login.html'
     redirect_authenticated_user = True
 
