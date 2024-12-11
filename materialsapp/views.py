@@ -1,45 +1,39 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required, permission_required
 from .models import Material
 from .forms import MaterialForm
 
-@login_required
+# Список матеріалів
 def material_list(request):
     materials = Material.objects.all()
-    return render(request, 'materials/material_list.html', {'materials': materials})
+    return render(request, 'materialsapp/material_list.html', {'materials': materials})
 
-@login_required
-@permission_required('materials.add_material', raise_exception=True)
+# Створення матеріалу
 def material_create(request):
     if request.method == 'POST':
-        form = MaterialForm(request.POST, request.FILES)
+        form = MaterialForm(request.POST)
         if form.is_valid():
-            material = form.save(commit=False)
-            material.created_by = request.user
-            material.save()
+            form.save()
             return redirect('material-list')
     else:
         form = MaterialForm()
-    return render(request, 'materials/material_form.html', {'form': form})
+    return render(request, 'materialsapp/material_form.html', {'form': form})
 
-@login_required
-@permission_required('materials.change_material', raise_exception=True)
+# Редагування матеріалу
 def material_edit(request, pk):
     material = get_object_or_404(Material, pk=pk)
     if request.method == 'POST':
-        form = MaterialForm(request.POST, request.FILES, instance=material)
+        form = MaterialForm(request.POST, instance=material)
         if form.is_valid():
             form.save()
             return redirect('material-list')
     else:
         form = MaterialForm(instance=material)
-    return render(request, 'materials/material_form.html', {'form': form})
+    return render(request, 'materialsapp/material_form.html', {'form': form})
 
-@login_required
-@permission_required('materials.delete_material', raise_exception=True)
+# Видалення матеріалу
 def material_delete(request, pk):
     material = get_object_or_404(Material, pk=pk)
     if request.method == 'POST':
         material.delete()
         return redirect('material-list')
-    return render(request, 'materials/material_confirm_delete.html', {'material': material})
+    return render(request, 'materialsapp/material_confirm_delete.html', {'material': material})
