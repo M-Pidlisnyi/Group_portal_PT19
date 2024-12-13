@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профіль</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h2>Профіль</h2>
+    <p>Логін: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Роль: {{ user.role.name }}</p>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="logout-button">Вийти</button>
+    </form>
+</body>
+</html>
+
