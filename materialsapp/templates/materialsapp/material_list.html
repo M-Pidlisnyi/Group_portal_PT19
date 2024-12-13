@@ -11,11 +11,11 @@
         {% for material in materials %}
             <li>
                 {{ material.name }}
-                (<a href="{{ material.id }}/edit/">Редагувати</a> |
-                <a href="{{ material.id }}/delete/">Видалити</a>)
+                (<a href="{% url 'material-edit' material.pk %}">Редагувати</a> |
+                <a href="{% url 'material-delete' material.pk %}">Видалити</a>)
             </li>
         {% endfor %}
     </ul>
-    <a href="new/">Додати новий матеріал</a>
+    <a href="{% url 'material-create' %}">Додати новий матеріал</a>
 </body>
 </html>
