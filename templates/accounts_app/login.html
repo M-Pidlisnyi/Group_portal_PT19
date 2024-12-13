@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="uk">
-{% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Логін</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
     <h2>Логін</h2>
     <form method="post">
         {% csrf_token %}
@@ -15,5 +8,4 @@
         <button type="submit">Увійти</button>
     </form>
     <a href="{% url 'register' %}">Зареєструватися</a>
-</body>
-</html>
+{% endblock %}
