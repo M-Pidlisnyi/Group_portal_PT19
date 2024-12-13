@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редагувати матеріал</title>
+</head>
+<body>
+    <h1>Редагувати матеріал</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Оновити</button>
+    </form>
+    <a href="/">Назад до списку</a>
+</body>
+</html>
