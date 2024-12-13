@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>портфоліо</title>
+</head>
+<body>
+    <h1>Мої портфоліо</h1>
+    <a href="{% url 'create_portfolio' %}">Створити нове портфоліо</a>
+    <ul>
+        {% for portfolio in portfolios %}
+            <li>
+                <a href="{% url 'portfolio_detail' portfolio.pk %}">{{ portfolio.title }}</a>
+                <a href="{% url 'edit_portfolio' portfolio.pk %}">Редагувати</a>
+            </li>
+        {% empty %}
+            <li>У вас ще немає портфоліо.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
