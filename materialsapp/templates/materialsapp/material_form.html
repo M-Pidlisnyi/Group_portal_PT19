@@ -6,14 +6,12 @@
         <h1 class="text-primary text-center mb-4">Додати новий матеріал</h1>
         <form method="post">
             {% csrf_token %}
-            <div class="mb-3">
-                {{ form.as_p }}
-            </div>
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary px-4">Зберегти</button>
         </form>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary px-4">Зберегти</button>
             <a href="{% url 'material-list' %}" class="btn btn-outline-secondary ms-3 px-4">Назад до списку</a>
         </div>
     </div>
 </div>
-{% endblock %}
+{% endblock %}  
