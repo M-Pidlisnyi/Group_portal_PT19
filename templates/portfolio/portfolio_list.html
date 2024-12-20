@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>портфоліо</title>
-</head>
-<body>
+{%extends 'base.html'%}
+
+
+{% block content %}
     <h1>Мої портфоліо</h1>
     <a href="{% url 'create_portfolio' %}">Створити нове портфоліо</a>
     <ul>
@@ -17,5 +14,4 @@
             <li>У вас ще немає портфоліо.</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{%endblock %}
