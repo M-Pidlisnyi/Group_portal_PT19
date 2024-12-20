@@ -139,3 +139,95 @@ form .btn-exit:hover {
     max-width: 300px;
     word-wrap: break-word;
 }
+
+
+
+
+
+
+/* Main page */
+/* Загальний стиль для header */
+.header {
+    background-color: #f8f9fa; /* Світлий фон */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легка тінь */
+}
+
+/* Логотип */
+.logo {
+    height: 50px;
+    vertical-align: middle;
+}
+
+/* Навігація */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Меню */
+.dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    color: #007bff; /* Акцентний колір */
+}
+
+/* Кнопки авторизації */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    color: #007bff;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.auth-buttons a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .auth-buttons {
+        margin-top: 10px;
+    }
+}
+
+.main-content {
+    margin: 5%;
+}

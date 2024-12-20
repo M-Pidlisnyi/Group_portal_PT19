@@ -11,11 +11,39 @@
     <div class="header">
         <header>
             <img src="{% static 'images/logo.png' %}" alt="Логотип компанії" class="logo">
+            <nav>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'material-list' %}">Material list</a></li>
+                    <li><a href="{% url 'portfolio_list' %}">Portfolio</a></li>
+                    <li><a href="{% url 'Announcment_list' %}">Announcments</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'profile' %}">Profile</a>
+                    {% else %}
+                        <a href="{% url 'login' %}">Login</a>
+                        <a href="{% url 'sign-up' %}">Sign up</a>
+                    {% endif %}
+                </div>
+            </nav>
         </header>
     </div>
     {% block content %}
 
     {% endblock %}
+    {% if latest_anns %}
+        <div class="latest-ann" id="latest-ann">
+            <button class="close-btn" onclick="closeAnnouncement()">×</button>
+            <h2>{{ latest_anns.title }}</h2>
+            <p>{{ latest_anns.content }}</p>
+        </div>
+        <script>
+            function closeAnnouncement() {
+                document.getElementById('latest-ann').style.display = 'none';
+            }
+        </script>
+    {% endif %}
     <footer>
         <p>&copy; 2024 Компанія. Усі права захищені.</p>
     </footer>
