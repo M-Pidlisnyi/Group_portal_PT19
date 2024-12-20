@@ -1,6 +1,7 @@
 from django.db import models
 from accounts_app.models import CustomUser
 
+
 class GalleryItem(models.Model):
     MEDIA_TYPE_CHOICES = [
         ('photo', 'Фото'),
