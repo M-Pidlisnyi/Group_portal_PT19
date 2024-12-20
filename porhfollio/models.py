@@ -1,8 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+from accounts_app.models import CustomUser
 
 class Portfolio(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="portfolios", verbose_name="Користувач")
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="portfolios", verbose_name="Користувач")
     title = models.CharField(max_length=200, verbose_name="Назва")
     description = models.TextField(blank=True, verbose_name="Опис")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Створено")

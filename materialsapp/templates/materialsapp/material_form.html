@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Додати новий матеріал</title>
-</head>
-<body>
-    <h1>Додати новий матеріал</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Зберегти</button>
-    </form>
-    <a href="/">Назад до списку</a>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card p-4 shadow-sm">
+        <h1 class="text-primary text-center mb-4">Додати новий матеріал</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary px-4">Зберегти</button>
+        </form>
+        <div class="text-center">
+            <a href="{% url 'material-list' %}" class="btn btn-outline-secondary ms-3 px-4">Назад до списку</a>
+        </div>
+    </div>
+</div>
+{% endblock %}  
