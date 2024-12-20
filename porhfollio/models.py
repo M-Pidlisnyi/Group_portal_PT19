@@ -1,5 +1,7 @@
 from django.db import models
+
 from django.contrib.auth.models import User
+
 from accounts_app.models import CustomUser
 
 class Portfolio(models.Model):
