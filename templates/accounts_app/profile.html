@@ -1,12 +1,17 @@
-{% extends "base.html" %}
+
+{% extends 'base.html' %}
 
 {% block content %}
-    <h2>Профіль</h2>
-    <p>Логін: {{ user.username }}</p>
-    <p>Email: {{ user.email }}</p>
-    <p>Роль: {{ user.role.name }}</p>
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="logout-button">Вийти</button>
-    </form>
+    <div class="profile">
+        <h2>Профіль</h2>
+        <div class="profile-info">
+            <p><strong>Логін:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Роль:</strong> {{ user.role.name }}</p>
+        </div>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn-exit">Вийти</button>
+        </form>
 {% endblock %}
+
