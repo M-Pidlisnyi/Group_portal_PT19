@@ -132,6 +132,25 @@ form .btn-exit:hover {
     color: #007bff;
 }
 
+
+
+/* Announcments */
+.ann-container {
+    margin: 20px;
+    flex-grow: 1;
+}
+.latest-ann {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #f0f8ff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 300px;
+    word-wrap: break-word;
+}
+
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
