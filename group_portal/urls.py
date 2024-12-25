@@ -16,7 +16,7 @@ Including another URLconf
 """
 
 
-from django.contrib import admin 
+from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
@@ -29,8 +29,8 @@ urlpatterns = [
     path('', include("announcment_app.urls")),
     path('', include("main_page_app.urls")),
     path('materialsapp/', include('materialsapp.urls')),
-    path('galleryapp/', include('galleryapp')),
-    path('porhfollio/', include('porhfollio.urls')), 
+    path('galleryapp/', include('galleryapp.urls')),
+    path('porhfollio/', include('porhfollio.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
