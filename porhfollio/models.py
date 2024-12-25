@@ -1,4 +1,6 @@
 from django.db import models
+
+
 from accounts_app.models import CustomUser
 
 class Portfolio(models.Model):
