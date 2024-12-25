@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'porhfollio', 
     'materialsapp',
+    'galleryapp',
     'accounts_app',
     'announcment_app'
 
