@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+
+{% block content %}
+    <h1>Портфоліо: {{ portfolio.title }}</h1>
+    <p>{{ portfolio.description }}</p>
+    <h2>Елементи портфоліо</h2>
+    <ul>
+        {% for item in items %}
+            <li>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                {% if item.screenshot %}
+                    <img src="{{ item.screenshot.url }}" alt="{{ item.title }}" />
+                {% endif %}
+                {% if item.link %}
+                    <p>Посилання: <a href="{{ item.link }}" target="_blank">{{ item.link }}</a></p>
+                {% endif %}
+                {% if item.file %}
+                    <p>Файл: <a href="{{ item.file.url }}" download>Завантажити файл</a></p>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>Немає елементів в цьому портфоліо.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_portfolio_item' portfolio.pk %}">Додати новий елемент</a>
+
+{%endblock %}

@@ -1,5 +1,6 @@
 
-{% extends 'base.html' %}
+{%extends 'base.html'%}
+
 
 
 {% block content %}
@@ -9,7 +10,6 @@
         {{ form.as_p }}
         <button type="submit" class="btn-primary">Зареєструватися</button>
     </form>
-
     <a href="{% url 'login' %}" class="link-secondary">Увійти</a>
 {% endblock %}
 
