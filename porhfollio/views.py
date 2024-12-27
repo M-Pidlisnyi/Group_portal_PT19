@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Portfolio, PortfolioItem
 from .forms import PortfolioForm, PortfolioItemForm
 
+@login_required
 def portfolio_list(request):
     portfolios = Portfolio.objects.filter(user=request.user)
     return render(request, 'portfolio/portfolio_list.html', {'portfolios': portfolios})
