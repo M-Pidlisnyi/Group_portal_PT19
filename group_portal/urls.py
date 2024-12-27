@@ -30,7 +30,8 @@ urlpatterns = [
     path('', include("main_page_app.urls")),
     path('materialsapp/', include('materialsapp.urls')),
     path('galleryapp/', include('galleryapp.urls')),
-    path('porhfollio/', include('porhfollio.urls')),
+    path('porhfollio/', include('porhfollio.urls')), 
+
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
