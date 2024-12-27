@@ -6,3 +6,4 @@
 
 GALLERY 
 
+new text
