@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'forumapp',
     'porhfollio', 
     'materialsapp',
     'galleryapp',
@@ -68,7 +69,9 @@ ROOT_URLCONF = 'group_portal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
         'DIRS': [BASE_DIR / 'templates'],  # Додаємо кореневу папку templates
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -139,7 +142,12 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
 AUTH_USER_MODEL = 'accounts_app.CustomUser'
 
 LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = 'login'
+

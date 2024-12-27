@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<form method="get">
+    {{form}}
+    <input type="submit" value="Search">
+</form>
+
+
+{% for thread in thread_list %}
+
+    <div>
+        <a href="{% url 'thread-detail' thread.id %}">{{thread.title}}</a> 
+        
+    </div>
+
+    
+
+{% endfor %}
+
+{% endblock content %}

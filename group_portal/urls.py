@@ -18,6 +18,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+
 from django.conf import settings
 from django.conf.urls.static import static
 from django.http import HttpResponse
@@ -31,7 +32,9 @@ urlpatterns = [
     path('materialsapp/', include('materialsapp.urls')),
     path('galleryapp/', include('galleryapp.urls')),
     path('porhfollio/', include('porhfollio.urls')), 
+    path('forum/', include('forumapp.urls')),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 
