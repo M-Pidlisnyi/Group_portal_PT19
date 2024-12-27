@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="ann-container">
+        <h1>Advertisements</h1>
+        <ul>
+            {% for ann in anns %}
+                <li>{{ ann.title }}</li>
+                {{ ann.content }}
+                {{ ann.created_at }}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

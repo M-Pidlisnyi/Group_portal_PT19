@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Редагувати{% else %}Створити{% endif %} портфоліо</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Редагувати{% else %}Створити{% endif %} портфоліо</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if form.instance.pk %}Оновити{% else %}Створити{% endif %}</button>
+    </form>
+</body>
+</html>

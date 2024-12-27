@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card p-4 text-center">
+        <h1 class="text-primary mb-4">Ви впевнені, що хочете видалити "{{ material.name }}"?</h1>
+
+        <form method="post" class="mb-3">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary px-4">Так, видалити</button>
+            <a href="{% url 'material-list' %}" class="btn btn-outline-secondary ms-3 px-4">Скасувати</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
