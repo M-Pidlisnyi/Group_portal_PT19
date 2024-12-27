@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-primary text-center">Модерація матеріалів</h1>
+    <ul class="list-group">
+        {% for item in items %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ item.title }} ({{ item.media_type }})
+            <a href="{% url 'approve-item' item.pk %}" class="btn btn-success btn-sm">Схвалити</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

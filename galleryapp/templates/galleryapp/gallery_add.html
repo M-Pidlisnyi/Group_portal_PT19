@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-primary text-center">Додати матеріал</h1>
+    <div class="card p-4">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Завантажити</button>
+        </form>
+        <a href="{% url 'gallery-list' %}" class="btn btn-outline-secondary mt-3">Назад до галереї</a>
+    </div>
+</div>
+{% endblock %}
