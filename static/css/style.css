@@ -97,7 +97,8 @@ form .btn-exit:hover {
     display: block;
     text-align: center;
     margin-top: 10px;
-    color: #007bff;
+    /* color: #007bff; */
+    color:red;
     text-decoration: none;
 }
 
