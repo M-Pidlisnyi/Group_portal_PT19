@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-primary mb-4 text-center">Список матеріалів</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            {% if materials %}
+                <ul class="list-group list-group-flush">
+                    {% for material in materials %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">{{ material.name }}</span>
+                            <div>
+                                <a href="{% url 'material-edit' material.pk %}" class="btn btn-sm btn-warning me-2">Редагувати</a>
+                                <a href="{% url 'material-delete' material.pk %}" class="btn btn-sm btn-danger">Видалити</a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-muted text-center mb-0">Матеріалів поки що немає.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'material-create' %}" class="btn btn-primary btn-lg">Додати новий матеріал</a>
+    </div>
+</div>
+{% endblock %}
